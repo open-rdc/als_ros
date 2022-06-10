@@ -8,7 +8,7 @@
 
     <!-- Input messages -->
     <arg name="scan_name" default="/scan" /> <!-- sensor_msgs::LaserScan -->
-    <arg name="odom_name" default="/odom" /> <!-- nav_msgs::Odometry -->
+    <arg name="odom_name" default="/combined_odom" /> <!-- nav_msgs::Odometry -->
     <arg name="map_name" default="/map" /> <!-- nav_msgs::OccupancyGrid -->
 
     <!-- Output messages -->
@@ -85,7 +85,7 @@
           unknown_scan_prob_threshold must be included from 0 to 1. -->
     <arg name="reject_unknown_scan" default="false" />
     <arg name="publish_unknown_scan" default="true" />
-    <arg name="unknown_scan_prob_threshold" default="0.9" />
+    <arg name="unknown_scan_prob_threshold" default="0.7" />
 
     <!-- If publish_residual_errors is true,
          the residual errors from the estimated pose will be published. -->
