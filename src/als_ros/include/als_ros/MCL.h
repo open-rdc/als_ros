@@ -511,7 +511,9 @@ public:
         if (rejectUnknownScan_ && (measurementModelType_ == 0 || measurementModelType_ == 1))
             rejectUnknownScan();
 
-        mclPoseStamp_ = scan_.header.stamp;
+        // mclPoseStamp_ = scan_.header.stamp;
+        ros::Duration transform_tolerance(1.0); // TODO: This value should be set as a parameter.
+        mclPoseStamp_ = scan_.header.stamp + transform_tolerance;
         double xo = baseLink2Laser_.getX();
         double yo = baseLink2Laser_.getY();
         double yawo = baseLink2Laser_.getYaw();
